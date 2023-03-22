@@ -42,7 +42,7 @@ C:\UWApp\uwapp> deactivate
 ```
 C:\UWApp\uwapp> python manage.py startapp new_app
 ```
-2. Add the new application to settings.py:
+2. Add the new application to `settings.py`:
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'new_app',
 ]
 ```
-3. Add the urls for the new application to uwapp/urls.py:
+3. Add the urls for the new application to `uwapp/urls.py`:
 ```
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -76,7 +76,7 @@ Once UWApp is setup and customized, it can be configured to be hosted on an AWS 
 ```
 C:\UWApp\uwapp> .venv/Scripts/activate
 ```
-2. Create a requirements.txt file that Elastic Beanstalk uses for package installation:
+2. Create a `requirements.txt` file that Elastic Beanstalk uses for package installation:
 ```
 C:\UWApp\uwapp> pip freeze > requirements.txt
 ```
