@@ -1,2 +1,2 @@
-# UWA
+# UWApp
 Universal Web Application
