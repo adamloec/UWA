@@ -6,8 +6,10 @@ A personal template repository for all future web application development. Easy 
 
 ## Features
 - Django backend. Utilizing function based views that render template HTML files.
+- User registration and authentication with login views and models.
+- Pay-wall ready custom user model.
 - Easy template customization and functionality, thanks to https://github.com/StartBootstrap/startbootstrap-sb-admin-2.
-- SQLite database for all custom models and user information.
+- SQLite database.
 - Easily add accessory Django applications.
 
 ## Installation and Initial Setup
