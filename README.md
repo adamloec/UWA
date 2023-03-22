@@ -2,7 +2,7 @@
 Universal Web Application (UWApp) is a template repository utilizing a customizable Python Django backend that can be hosted on an Elastic Beanstalk AWS server.
 
 ## Purpose
-A personal template repository for all future web application development. Easy installation, setup, and configuration for all applications.
+A personal template repository for future web application development. Easy installation, setup, and configuration for all applications.
 
 ## Features
 - Django backend. Utilizing function based views that render template HTML files.
