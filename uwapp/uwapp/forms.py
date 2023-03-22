@@ -1,12 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .models import AppUser
+from .models import UWAppUser
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField()
 
     class Meta:
-        model = AppUser
+        model = UWAppUser
         fields = ['username', 'email', 'password1', 'password2']
 
 class LoginForm(AuthenticationForm):
