@@ -10,7 +10,17 @@ A personal template repository for all future web application development. Easy 
 ```
 pip install virtualenv awsebcli
 ``` 
-2. Create a virtual environment for your Django application:
+2. Clone the UWApp repository:
 ```
-
+git clone https://github.com/adamloec/UWApp
 ```
+3. Create a virtual environment inside of the repository:
+```
+cd UWApp
+virtualenv .venv
+```
+    - To activate/deactivate:
+    ```
+    .venv/Scripts/activate
+    deactivate
+    ```
