@@ -42,6 +42,19 @@ deactivate
 cd UWApp/uwapp/
 python manage.py startapp new_app
 ```
+2. Add the new application to INSTALLED_APPS in settings.py:
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'uwapp',
+    'new_app',
+]
+```
 ## AWS Elastic Beanstalk Configuration
 1. Activate the virtual environment:
 ```
