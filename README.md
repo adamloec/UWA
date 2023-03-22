@@ -37,7 +37,7 @@ C:\UWApp\uwapp> CTRL^C
 C:\UWApp\uwapp> deactivate
 ```
 
-## Create new Django Applications and Customization
+## Create and Add Django Applications
 1. Create or add a new Django application inside of UWApp (Replace "new_app" with the name of the new application):
 ```
 C:\UWApp> .venv/Scripts/activate
