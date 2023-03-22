@@ -14,33 +14,32 @@ A personal template repository for all future web application development. Easy 
 1. Install the prerequisites for creating an Elastic Beanstalk AWS Django application:
     - Python 3.7 or later
 ```
-pip install virtualenv awsebcli
+C:\> pip install virtualenv awsebcli
 ``` 
 2. Clone the UWApp repository:
 ```
-git clone https://github.com/adamloec/UWApp
+C:\> git clone https://github.com/adamloec/UWApp
 ```
 3. Create a virtual environment inside of the repository:
 ```
-cd UWApp
-virtualenv .venv
+C:\> cd UWApp\uwapp
+C:\UWApp\uwapp> virtualenv .venv
 ```
 4. Active the virtual environment and run the application locally:
 ```
-.venv/Scripts/activate (To deactivate: deactivate)
-python manage.py migrate
-python manage.py runserver
+C:\UWApp\uwapp> .venv/Scripts/activate
+C:\UWApp\uwapp> python manage.py migrate
+C:\UWApp\uwapp> python manage.py runserver
 ```
 5. To close the server and virtual environment:
 ```
-CTRL^C
-deactivate
+C:\UWApp\uwapp> CTRL^C
+C:\UWApp\uwapp> deactivate
 ```
 ## Create new Django Applications and Customization
 1. Create or add a new Django application inside of UWApp (Replace "new_app" with the name of the new application):
 ```
-cd UWApp/uwapp/
-python manage.py startapp new_app
+C:\UWApp\uwapp> python manage.py startapp new_app
 ```
 2. Add the new application to INSTALLED_APPS in settings.py:
 ```
@@ -58,6 +57,6 @@ INSTALLED_APPS = [
 ## AWS Elastic Beanstalk Configuration
 1. Activate the virtual environment:
 ```
-.venv/Scripts/activate
+C:\UWApp\uwapp> .venv/Scripts/activate
 ```
 2. 
