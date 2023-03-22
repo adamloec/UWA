@@ -5,7 +5,7 @@ Universal Web Application (UWApp) is a template repository utilizing a Python Dj
 A personal template repository for all future web application development. Easy installation, setup, and configuration for all applications.
 
 ## Features
-- Django backend: Custom user models, registration and login functionality, url management, views, and forms.
+- Django backend. Utilizing function based views that render template HTML files.
 - Easy template customization and functionality, thanks to https://github.com/StartBootstrap/startbootstrap-sb-admin-2.
 - SQLite database for all custom models and user information.
 - Easily add accessory Django applications.
@@ -36,12 +36,13 @@ C:\UWApp\uwapp> python manage.py runserver
 C:\UWApp\uwapp> CTRL^C
 C:\UWApp\uwapp> deactivate
 ```
+
 ## Create new Django Applications and Customization
 1. Create or add a new Django application inside of UWApp (Replace "new_app" with the name of the new application):
 ```
 C:\UWApp\uwapp> python manage.py startapp new_app
 ```
-2. Add the new application to INSTALLED_APPS in settings.py:
+2. Add the new application to settings.py:
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -54,6 +55,20 @@ INSTALLED_APPS = [
     'new_app',
 ]
 ```
+3. Add the urls for the new application to uwapp/urls.py:
+```
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('register/', views.registration, name='register'),
+    path('login/', views.login, name='login'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('new_app/', include('new_app.urls')),
+]
+```
+
+Now that these additions to UWApp were made, it can be further customized to accomodate for the new application urls/views.
+
 ## AWS Elastic Beanstalk Configuration
 1. Activate the virtual environment:
 ```
