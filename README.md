@@ -8,6 +8,7 @@ A personal template repository for all future web application development. Easy 
 - Django backend: Custom user models, registration and login functionality, url management, views, and forms.
 - Easy template customization and functionality, thanks to https://github.com/StartBootstrap/startbootstrap-sb-admin-2.
 - Easily add accessory Django applications.
+- SQLite database for all custom models and user information.
 
 ## Installation and Setup
 1. Install the prerequisites for creating an Elastic Beanstalk AWS Django application:
