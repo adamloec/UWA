@@ -1,8 +1,13 @@
 # UWApp
-Universal Web Application utilizing a Python Django backend and hosted on an Elastic Bean Stalk AWS server.
+Universal Web Application (UWApp) is a template repository utilizing a Python Django backend and hosted on an Elastic Bean Stalk AWS server.
 
 ## Purpose
-A personal template repository for all future web application development. Easy installation, setup, and configuration for all use cases.
+A personal template repository for all future web application development. Easy installation, setup, and configuration for all applications.
+
+## Features
+- Django backend: Custom user models, registration and login functionality, url management, views, and forms.
+- Easy template customization and functionality, thanks to https://github.com/StartBootstrap/startbootstrap-sb-admin-2.
+- Easily add accessory Django applications.
 
 ## Installation and Setup
 1. Install the prerequisites for creating an Elastic Beanstalk AWS Django application:
