@@ -99,4 +99,6 @@ C:\UWApp> deactivate
 ```
 6. To upload your UWApp application to AWS simply create a new Elastic Beanstalk application and instance. Upload the directory as the source code:
 
-![](images/ebs-sourcecode.png)
+<p align="center">
+  <img width="460" height="300" src="images/ebs-sourcecode.png">
+</p>
