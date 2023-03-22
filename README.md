@@ -22,12 +22,12 @@ C:\> git clone https://github.com/adamloec/UWApp
 ```
 3. Create a virtual environment inside of the repository:
 ```
-C:\> cd UWApp\uwapp
-C:\UWApp\uwapp> virtualenv .venv
+C:\> cd UWApp
+C:\UWApp> virtualenv .venv
 ```
 4. Active the virtual environment and run the application locally:
 ```
-C:\UWApp\uwapp> .venv/Scripts/activate
+C:\UWApp> .venv/Scripts/activate
 C:\UWApp\uwapp> python manage.py migrate
 C:\UWApp\uwapp> python manage.py runserver
 ```
@@ -40,9 +40,10 @@ C:\UWApp\uwapp> deactivate
 ## Create new Django Applications and Customization
 1. Create or add a new Django application inside of UWApp (Replace "new_app" with the name of the new application):
 ```
+C:\UWApp> .venv/Scripts/activate
 C:\UWApp\uwapp> python manage.py startapp new_app
 ```
-2. Add the new application to `settings.py`:
+2. Add the new application to `uwapp/settings.py`:
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,10 +75,23 @@ Now that these additions to UWApp were made, it can be further customized to acc
 Once UWApp is setup and customized, it can be configured to be hosted on an AWS server using their Elastic Beanstalk platform.
 1. Activate the virtual environment:
 ```
-C:\UWApp\uwapp> .venv/Scripts/activate
+C:\UWApp> .venv/Scripts/activate
 ```
 2. Create a `requirements.txt` file that Elastic Beanstalk uses for package installation:
 ```
-C:\UWApp\uwapp> pip freeze > requirements.txt
+C:\UWApp\ pip freeze > requirements.txt
 ```
 3. Create a directory named `.ebextensions`:
+```
+C:\UWApp> mkdir .ebextensions
+```
+4. Add a configuration file named `django.config` to the `.ebextensions` directory with the following text:
+```
+option_settings:
+    aws:elasticbeanstalk:container:python:
+        WSGIPath: UWApp.wsgi:application
+```
+5. Deactivate the virtual environment:
+```
+C:\UWApp> deactivate
+```
