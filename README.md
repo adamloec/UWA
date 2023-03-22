@@ -3,6 +3,7 @@ Universal Web Application (UWApp) is a template repository utilizing a customiza
 <p align="center">
   <img src="images/UWApp-logo.png">
 </p>
+
 ## Purpose
 A personal template repository for future web application development. Easy installation, setup, and configuration for all applications.
 
