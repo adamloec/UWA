@@ -19,8 +19,8 @@ git clone https://github.com/adamloec/UWApp
 cd UWApp
 virtualenv .venv
 ```
-    - To activate/deactivate:
-    ```
-    .venv/Scripts/activate
-    deactivate
-    ```
+- To activate/deactivate:
+```
+.venv/Scripts/activate
+deactivate
+```
