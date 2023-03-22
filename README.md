@@ -10,3 +10,7 @@ A personal template repository for all future web application development. Easy 
 ```
 pip install virtualenv awsebcli
 ``` 
+2. Create a virtual environment for your Django application:
+```
+
+```
