@@ -25,7 +25,8 @@ def registration(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect(reverse_lazy('dashboard'))
-        
+    form = RegistrationForm()
+
     errors = form.errors.get_json_data()
     if errors:
         for field, field_errors in errors.items():
@@ -50,6 +51,7 @@ def login(request):
             
             else:
                 form.add_error(None, 'Incorrect username or password.')
+    form = LoginForm()
     
     return render(request, 'login.html', {'form': form})
 
