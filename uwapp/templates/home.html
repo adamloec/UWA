@@ -3,37 +3,30 @@
 {% block title %} UWApp {% endblock %}
 
 {% block content %}
-<!-- Main Content -->
-<!-- Page Wrapper -->
-<div id="wrapper">
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column bg-gradient-primary">
-        <div id="content">
 
-            <!-- Topbar -->
-            {% include 'topbar.html' %}
-
-            <!-- Begin Page Content -->
-            <div class="container-fluid ">
-                
-            </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-gradient-dark">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; UWApp 2023</span>
+<body class="about-us bg-gray-800">
+    {% include 'navbar.html' %}
+    <header class="bg-gradient-dark">
+        <div class="page-header min-vh-75">
+            <span class="mask bg-gradient-dark opacity-6"></span>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mx-auto my-auto">
+                        <h1 class="text-white">UWApp</h1>
+                        <p class="lead mb-4 text-white opacity-8">This is a Universal Web Application.</p>
+                        <a class="btn bg-white text-dark" href="{% url 'register' %}">Join Us</a>
+                        <h6 class="text-white mb-2 mt-5">Find us on</h6>
+                        <div class="d-flex justify-content-center">
+                            <a href=""><i class="fab fa-facebook text-lg text-white me-4"></i></a>
+                            <a href=""><i class="fab fa-instagram text-lg text-white me-4"></i></a>
+                            <a href=""><i class="fab fa-twitter text-lg text-white me-4"></i></a>
+                            <a href=""><i class="fab fa-google-plus text-lg text-white"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
-        <!-- End of Footer -->
-    </div>
-    <!-- End of Content Wrapper -->
-</div>
-<!-- End of Page Wrapper -->
+        </div>
+    </header>
+</body>
 
 {% endblock %}
