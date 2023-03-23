@@ -7,12 +7,12 @@ from .forms import RegistrationForm, LoginForm
 
 # Home View
 # Visible to all, registered users, etc.
-def home(request):
+def homeView(request):
     return render(request, 'home.html')
 
 # Register View
 # New user registration view.
-def registration(request):
+def registrationView(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
 
@@ -37,7 +37,7 @@ def registration(request):
 
 # Login View
 # Returning user login view.
-def login(request):
+def loginView(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -58,7 +58,7 @@ def login(request):
 # Dashboard View
 # Dashboard view for registered users upon logging into the web application.
 @login_required
-def dashboard(request):
+def dashboardView(request):
     if request.user.has_subscription:
         pass
 

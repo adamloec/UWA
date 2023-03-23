@@ -106,3 +106,9 @@ C:\UWApp> deactivate
 <p align="center">
   <img src="images/ebs-sourcecode.png">
 </p>
+
+## Django Debugging
+- To reset the sqlite3 database using Django:
+```
+C:\UWApp\uwapp> python manage.py flush
+```
