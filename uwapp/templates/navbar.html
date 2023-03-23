@@ -19,18 +19,20 @@
             <ul class="navbar-nav navbar-nav-hover ms-auto">
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center mx-2 ms-lg-2" aria-current="page"
-                        href="../pages/dashboard.html">
+                        href="{% url 'home' %}">
                         <i class="material-icons opacity-6 me-2 text-md">home</i>
                         Home
                     </a>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center mx-2 ms-lg-2" aria-current="page"
-                        href="../pages/dashboard.html">
+                        href="{% url 'dashboard' %}">
                         <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
                         Dashboard
                     </a>
                 </li>
+                {% endif %}
                 <li class="nav-item dropdown dropdown-hover mx-2 ms-lg-2">
                     <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
                         id="dropdownMenuPages8" data-bs-toggle="dropdown" aria-expanded="false">
