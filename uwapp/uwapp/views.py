@@ -69,4 +69,4 @@ def dashboardView(request):
     if request.user.has_subscription:
         pass
 
-    return render(request, 'dashboard.html')
+    return render(request, 'dashboard/dashboard.html')

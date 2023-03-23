@@ -40,5 +40,18 @@
         <!-- Page level custom scripts -->
         <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
         <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
+
+        <!-- Custom UWApp Scripts -->
+        <script>
+            // Removes UWApp header when dashboard is opened.
+            if (document.getElementById("accordionSidebar"))
+            {
+                var header = document.getElementById("header");
+                if (header)
+                {
+                    header.parentNode.removeChild(header);
+                }
+            }
+        </script>
     </body>
 </html>

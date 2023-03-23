@@ -1,12 +1,14 @@
 <!-- Topbar -->
+
 <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow bg-gradient-dark">
 
     <!-- Header -->
-    <a style="text-decoration:none;" href="{% url 'home' %}">
+    <a style="text-decoration:none;" href="{% url 'home' %}" id="header">
         <div >
             <h1 class="h3 mb-0 text-gray-400" >UWApp</h1>
         </div>
     </a>
+
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
 
@@ -22,6 +24,13 @@
         <li class="nav-item mx-1">
             <a class="nav-link" href="{% url 'dashboard' %}">
                 Dashboard
+            </a>
+        </li>
+
+        <!-- Nav Item - Membership -->
+        <li class="nav-item mx-1">
+            <a class="nav-link" href="{% url 'dashboard' %}">
+                Membership
             </a>
         </li>
 
