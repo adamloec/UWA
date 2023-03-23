@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import is_valid_path, reverse_lazy
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 
 from .forms import RegistrationForm, LoginForm
 
@@ -36,24 +36,31 @@ def registrationView(request):
     return render(request, 'registration.html', {'form': form})
 
 # Login View
-# Returning user login view.
+# Registered user login view.
 def loginView(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
+            
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
-
+            
             if user is not None:
                 login(request, user)
                 return redirect(reverse_lazy('home'))
             
             else:
-                form.add_error(None, 'Incorrect username or password.')
+                form.add_error('username', 'Incorrect username or password.')
     form = LoginForm()
-    
+
     return render(request, 'login.html', {'form': form})
+
+# Logout View
+#
+def logoutView(request):
+    logout(request)
+    return redirect('home')
 
 # Dashboard View
 # Dashboard view for registered users upon logging into the web application.

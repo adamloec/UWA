@@ -108,6 +108,10 @@ C:\UWApp> deactivate
 </p>
 
 ## Django Debugging
+- To view the UWApp User database table in CLI:
+```
+C:\UWApp\uwapp> python manage.py dumpdata uwapp.UWAppUser
+```
 - To reset the sqlite3 database using Django:
 ```
 C:\UWApp\uwapp> python manage.py flush
