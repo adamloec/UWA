@@ -33,6 +33,7 @@ C:\UWApp> virtualenv .venv
 4. Active the virtual environment and run the application locally:
 ```
 C:\UWApp> .venv/Scripts/activate
+C:\UWApp\uwapp> python manage.py makemigrations uwapp
 C:\UWApp\uwapp> python manage.py migrate
 C:\UWApp\uwapp> python manage.py runserver
 ```

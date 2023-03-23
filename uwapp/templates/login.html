@@ -24,19 +24,20 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-400 mb-4">Welcome Back!</h1>
+                                    <h1 class="h4 text-gray-400 mb-4">Login</h1>
                                 </div>
-                                <form class="user">
+
+                                <form class="user" name="register" method="POST">
+                                    {% csrf_token %}
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
+                                        <input type="email" class="form-control form-control-user" placeholder="Email" name="email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                        <input type="password" class="form-control form-control-user" placeholder="Password" name="password">
                                     </div>
-                                    <a class="btn btn-primary btn-user btn-block">
-                                        Login
-                                    </a>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                                 </form>
+
                                 <br>
                                 <div class="text-center">
                                     <a class="small text-danger" href="#">Forgot Password</a>

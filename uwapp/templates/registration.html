@@ -26,21 +26,24 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-400 mb-4">Create an Account</h1>
                                 </div>
-                                <form class="user">
+
+                                <form class="user" name="register" method="POST">
+                                    {% csrf_token %}
                                     <div class="form-group">
-                                        <input type="username" class="form-control form-control-user" id="exampleInputUsername" placeholder="Username">
+                                        <input type="text" class="form-control form-control-user" placeholder="Username" name="username">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
+                                        <input type="text" class="form-control form-control-user" placeholder="Email" name="email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                        <input type="password" class="form-control form-control-user" placeholder="Password" name="password1">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Retype Password">
+                                        <input type="password" class="form-control form-control-user" placeholder="Confirm Password" name="password2">
                                     </div>
-                                    <a class="btn btn-primary btn-user btn-block">Register</a>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">Register</button>
                                 </form>
+
                                 <hr>
                                 <div class="text-center">
                                     <a class="medium text-gray-400" href="{% url 'login' %}">Login</a>

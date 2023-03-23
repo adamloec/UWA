@@ -20,11 +20,11 @@ def registration(request):
             user = form.save()
             username = form.cleaned_data.get('username')
             email = form.cleaned_data.get('email')
-            password = form.cleaned_data('password1')
+            password = form.cleaned_data.get('password1')
 
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect(reverse_lazy('dashboard'))
+            return redirect(reverse_lazy('home'))
     form = RegistrationForm()
 
     errors = form.errors.get_json_data()
@@ -47,7 +47,7 @@ def login(request):
 
             if user is not None:
                 login(request, user)
-                return redirect(reverse_lazy('dashboard'))
+                return redirect(reverse_lazy('home'))
             
             else:
                 form.add_error(None, 'Incorrect username or password.')
