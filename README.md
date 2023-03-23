@@ -11,7 +11,7 @@ A personal template repository for future web application development. Easy inst
 - Django backend. Utilizing function based views that render template HTML files.
 - User registration and authentication with login views and models.
 - Pay-wall ready custom user model.
-- Easy template customization and functionality, thanks to https://github.com/StartBootstrap/startbootstrap-sb-admin-2.
+- Easy template customization and functionality, thanks to https://github.com/creativetimofficial/material-kit
 - SQLite database.
 - Easily add accessory Django applications.
 
@@ -75,7 +75,7 @@ urlpatterns = [
 ```
 
 Now that these additions to UWApp were made, it can be further customized to accomodate for the new application urls/views.
-- For customizing the HTML templates, it is recommended to review the example HTML documents here: https://github.com/StartBootstrap/startbootstrap-sb-admin-2
+- For customizing the HTML templates, it is recommended to review the example HTML documents here: https://github.com/creativetimofficial/material-kit
 
 ## AWS Elastic Beanstalk Configuration
 Once UWApp is setup and customized, it can be configured to be hosted on an AWS server using their Elastic Beanstalk platform.
