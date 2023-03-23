@@ -107,6 +107,8 @@ C:\UWApp> deactivate
   <img src="images/ebs-sourcecode.png">
 </p>
 
+7. Further AWS Elastic Beanstalk configuration, that is not covered here, is required to securely setup your application.
+
 ## Django Debugging
 - To view the UWApp User database table in CLI:
 ```
