@@ -11,9 +11,9 @@ A personal template repository for future web application development. Easy inst
 - Django backend. Utilizing function based views that render template HTML files.
 - User registration and authentication with login views and models.
 - Pay-wall ready custom user model.
-- Easy template customization for the front end, thanks to https://github.com/creativetimofficial/material-kit
 - SQLite database.
 - Easily add accessory Django applications.
+- Easy template customization for the front end, thanks to https://github.com/creativetimofficial/material-kit
 
 ## Installation and Initial Setup
 1. Install the prerequisites for creating an Elastic Beanstalk AWS Django application:
