@@ -25,15 +25,15 @@ def registrationView(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect(reverse_lazy('home'))
-    form = RegistrationForm()
-
-    errors = form.errors.get_json_data()
-    if errors:
-        for field, field_errors in errors.items():
-            for error in field_errors:
-                form.add_error(field, error.get('message'))
+    else:
+        form = RegistrationForm()
     
-    return render(request, 'registration.html', {'form': form})
+    error = None
+    if form.errors:
+        error = list(form.errors.as_data().values())[0][0].messages if form.errors else None
+        error = str(', '.join(error)).replace('[','').replace(']','').replace('\'','')
+    
+    return render(request, 'registration.html', {'form': form, 'error': error})
 
 # Login View
 # Registered user login view.
@@ -49,12 +49,15 @@ def loginView(request):
             if user is not None:
                 login(request, user)
                 return redirect(reverse_lazy('home'))
-            
-            else:
-                form.add_error('username', 'Incorrect username or password.')
-    form = LoginForm()
+    else:
+        form = LoginForm()
 
-    return render(request, 'login.html', {'form': form})
+    error = None
+    if form.errors:
+        error = list(form.errors.as_data().values())[0][0].messages if form.errors else None
+        error = str(', '.join(error)).replace('[','').replace(']','').replace('\'','')
+
+    return render(request, 'login.html', {'form': form, 'error': error})
 
 # Logout View
 #

@@ -20,9 +20,11 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            {% if error %}
                             <div class="alert alert-warning" role="alert">
-                                Registration errors go here.
+                                {{ error }}
                             </div>
+                            {% endif %}
                             <form role="form" class="text-start" method="POST" name="register">
                                 {% csrf_token %}
                                 <div class="input-group input-group-outline my-3">
