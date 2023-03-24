@@ -4,60 +4,58 @@
 {% block title %} UWApp {% endblock %}
 
 {% block content %}
-<!-- Main Content -->
 
-<!-- Topbar -->
-{% include 'topbar.html' %}
-
-<div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-        <div class="col-xl-10 col-lg-12 col-md-9">
-
-            <div class="card o-hidden border-0 shadow-lg my-5 bg-gradient-dark">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block"><img src="{% static 'images/UWApp-logo.png' %}" style="display: block;margin-left: 40px;margin-right: auto;" height="420" width="420"></div>
-                        <div class="col-lg-6">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-400 mb-4">Create an Account</h1>
-                                </div>
-
-                                <form class="user" name="register" method="POST">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" placeholder="Username" name="username">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" placeholder="Email" name="email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" placeholder="Password" name="password1">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" placeholder="Confirm Password" name="password2">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block">Register</button>
-                                </form>
-
-                                <hr>
-                                <div class="text-center">
-                                    <a class="medium text-gray-400" href="{% url 'login' %}">Login</a>
-                                </div>
+<body class="sign-in-basic">
+    {% include 'navbar.html' %}
+    
+    <div class="page-header align-items-start min-vh-100 bg-gradient-dark" loading="lazy">
+        <span class="mask bg-gradient-dark opacity-6"></span>
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-4 col-md-8 col-12 mx-auto">
+                    <div class="card z-index-0 fadeIn3 fadeInBottom">
+                        <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                            <div class="bg-gradient-info shadow-info border-radius-lg py-3 pe-1">
+                                <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Register</h4>
                             </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-warning" role="alert">
+                                Registration errors go here.
+                            </div>
+                            <form role="form" class="text-start" method="POST" name="register">
+                                {% csrf_token %}
+                                <div class="input-group input-group-outline my-3">
+                                    <label class="form-label">Username</label>
+                                    <input type="username" class="form-control" name="username">
+                                </div>
+                                <div class="input-group input-group-outline my-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" name="password1">
+                                </div>
+                                <div class="input-group input-group-outline mb-3">
+                                    <label class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" name="password2">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Register</button>
+                                </div>
+                            </form>
+                            <a href="{% url 'login' %}">
+                                <p class="mt-1 text-sm text-center">
+                                    Already have an account?
+                                </p>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
-</div>
+</body>
 
 {% endblock %}
