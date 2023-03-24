@@ -1,5 +1,8 @@
 from django import forms
+from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
+
 from .models import UWAppUser
 
 class RegistrationForm(UserCreationForm):
@@ -15,3 +18,13 @@ class RegistrationForm(UserCreationForm):
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=255, required=True, error_messages={'required': 'Username is required.'})
     password = forms.CharField(widget=forms.PasswordInput, required=True, error_messages={'required': 'Password is required.'})
+
+    def clean(self):
+        cleaned_data = super().clean()
+        username = cleaned_data.get('username')
+        password = cleaned_data.get('password')
+
+        if username and password:
+            user = authenticate(username=username, password=password)
+            if not user:
+                raise ValidationError('Invalid username or password.')
