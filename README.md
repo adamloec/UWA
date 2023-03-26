@@ -7,9 +7,6 @@ Universal Web Application (UWApp) is a template web application utilizing a cust
 ## Purpose
 A personal template repository for future web application development. Easy installation, setup, and configuration for all applications.
 
-## To-Do
-- Create membership view and template.
-
 ## Features
 - Django backend. Utilizing function based views that render template HTML files.
 - User registration and authentication with login views and models.
