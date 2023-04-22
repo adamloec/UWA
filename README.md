@@ -13,10 +13,12 @@ A personal template repository for future web application development. Easy inst
 - Pay-wall ready custom user model.
 - SQLite database.
 - Easily add accessory Django applications.
+- React frontend with customizable components.
 
 ## Installation and Initial Setup
 1. Install the prerequisites for creating an Elastic Beanstalk AWS Django application:
     - Python 3.7 or later
+    - NPM
 ```
 C:\> pip install virtualenv
 ``` 
@@ -28,6 +30,11 @@ C:\> git clone https://github.com/adamloec/UWApp
 ```
 C:\> cd UWApp
 C:\UWApp> virtualenv .venv
+```
+4. Install and Initialize React Packages:
+```
+C:\UWApp\uwapp\frontend> npm install
+C:\UWApp\uwapp\frontend> npm run build
 ```
 4. Active the virtual environment and run the application locally:
 ```
