@@ -19,7 +19,7 @@ A personal template repository for future web application development. Easy inst
 1. Install the prerequisites for creating an Elastic Beanstalk AWS Django application:
     - Python 3.7 or later
 ```
-C:\> pip install virtualenv awsebcli
+C:\> pip install virtualenv
 ``` 
 2. Clone the UWApp repository:
 ```
