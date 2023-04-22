@@ -13,7 +13,6 @@ A personal template repository for future web application development. Easy inst
 - Pay-wall ready custom user model.
 - SQLite database.
 - Easily add accessory Django applications.
-- Easy template customization for the front end, thanks to https://github.com/creativetimofficial/material-kit
 
 ## Installation and Initial Setup
 1. Install the prerequisites for creating an Elastic Beanstalk AWS Django application:
@@ -75,46 +74,3 @@ urlpatterns = [
 ```
 
 Now that these additions to UWApp were made, it can be further customized to accomodate for the new application urls/views.
-- For customizing the HTML templates, it is recommended to review the example HTML documents here: https://github.com/creativetimofficial/material-kit
-
-## AWS Elastic Beanstalk Configuration
-Once UWApp is setup and customized, it can be configured to be hosted on an AWS server using their Elastic Beanstalk platform.
-1. Activate the virtual environment:
-```
-C:\UWApp> .venv/Scripts/activate
-```
-2. Create a `requirements.txt` file that Elastic Beanstalk uses for package installation:
-```
-C:\UWApp\ pip freeze > requirements.txt
-```
-3. Create a directory named `.ebextensions`:
-```
-C:\UWApp> mkdir .ebextensions
-```
-4. Add a configuration file named `django.config` to the `.ebextensions` directory with the following text:
-```
-option_settings:
-    aws:elasticbeanstalk:container:python:
-        WSGIPath: UWApp.wsgi:application
-```
-5. Deactivate the virtual environment:
-```
-C:\UWApp> deactivate
-```
-6. To upload your UWApp application to AWS simply create a new Elastic Beanstalk application and instance. Upload the directory as the source code:
-
-<p align="center">
-  <img src="images/ebs-sourcecode.png">
-</p>
-
-7. Further AWS Elastic Beanstalk configuration, that is not covered here, is required to securely setup your application.
-
-## Django Debugging
-- To view the UWApp User database table in CLI:
-```
-C:\UWApp\uwapp> python manage.py dumpdata uwapp.UWAppUser
-```
-- To reset the sqlite3 database using Django:
-```
-C:\UWApp\uwapp> python manage.py flush
-```
