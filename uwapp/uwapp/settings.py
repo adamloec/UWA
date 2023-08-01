@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(BASE_DIR, 'frontend/build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "frontend/build/static"),
 ]
 
 # Default primary key field type
@@ -133,11 +133,8 @@ AUTH_USER_MODEL = 'uwapp.UWAppUser'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Set the login redirect URL to the home page
-LOGIN_REDIRECT_URL = '/dashboard' #/dashboard/
-
 # Set the logout redirect URL to the home page
 LOGOUT_REDIRECT_URL = '/'
 
 # Set the login URL to the login page
-LOGIN_URL = '/login/'
+LOGIN_URL = 'login/'
