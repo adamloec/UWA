@@ -49,35 +49,37 @@ C:\UWApp\uwapp> CTRL^C
 C:\UWApp\uwapp> deactivate
 ```
 
-## Create and Add Django Applications
-1. Create or add a new Django application inside of UWApp (Replace "new_app" with the name of the new application):
-```
-C:\UWApp> .venv/Scripts/activate
-C:\UWApp\uwapp> python manage.py startapp new_app
-```
-2. Add the new application to `uwapp/settings.py`:
-```
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'uwapp',
-    'new_app',
-]
-```
-3. Add the urls for the new application to `uwapp/urls.py`:
-```
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('register/', views.registration, name='register'),
-    path('login/', views.login, name='login'),
-    path('dashboard/', views.dashboard, name='dashboard'),
-    path('new_app/', include('new_app.urls')),
-]
-```
+# Submodules
+Submodules are used inside of UWApp to manage all peripheral applications.
+There will be 2 developer cases for managing submodules:
+- Working on submodules outside of the main UWApp repository.
+- Working on submodules inside of the main UWApp repository.
 
-Now that these additions to UWApp were made, it can be further customized to accomodate for the new application urls/views.
+:warning: **All submodules will be located inside of UWApp/uwapp**
+
+## Updating and managing submodules
+- Merge the latest commits for all submodules:
+```
+C:\UWApp> git submodule update --remote --merge
+```
+- Push the latest submodule branch(s) to the main UWApp repository:
+```
+C:\UWApp> git add --all
+C:\UWApp> git commit -m ""
+C:\UWApp> git push
+```
+## Working on submodules inside of the main UWApp repository
+After making changes to a submodule located inside of your working UWApp repository, the submodule and main UWApp branch need to be updated for the changes to be tracked.
+- Add and push all changes made to the submodule:
+```
+C:\UWApp\uwapp\submodule> git add {UPDATED_CONTENTS}
+C:\UWApp\uwapp\submodule> git commit -m ""
+C:\UWApp\uwapp\submodule> git push
+```
+- After changes were pushed to the submodule repository, fetch the latest commits and push them to the main UWApp repository:
+```
+C:\UWApp> git fetch
+C:\UWApp> git add --all
+C:\UWApp> git commit -m ""
+C:\UWApp> git push
+```
